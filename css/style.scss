@@ -1,0 +1,210 @@
+/* imports */
+
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu);
+
+/* colors */
+
+$btn-color: #27ae60;
+$btn-hover-color: #2ecc71;
+$textbox-color: #ecf0f1;
+
+/* mixins */
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+/* basic reset */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body{
+  background: #cbcbcb;
+}
+
+/* getting username */
+
+#wrapper{
+  position:absolute;
+  top: 0;
+  left:0;
+  height: 100%;
+  width: 100%;
+}
+
+#usernameWrap{
+  margin: 0 auto;
+  text-align: center;
+  max-width: 600px;
+  margin-top: 20%;
+}
+
+#usernameError{
+  margin: 20px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 24px;
+  color: #e74c3c;
+}
+
+#usernameWrap .message{
+  height: 50px;
+  padding: 5px 20px 5px 20px;
+  font-size: 24px;
+  font-family: 'Source Sans Pro', sans-serif;
+  background: #cbcbcb;
+  margin-bottom: 20px;
+  width: 100%;
+  border: none;
+  border-bottom: 3px solid $textbox-color;
+}
+
+#usernameWrap .message:focus{
+  border-bottom: 3px solid $btn-color;
+}
+
+#usernameWrap .button{
+  height: 50px;
+  padding: 5px 20px 5px 20px;
+  font-size: 24px;
+  font-family: 'Ubuntu', sans-serif;
+  border: none;
+  background: $btn-color;
+  color:#fff;
+  cursor: pointer;
+  transition: .5s;
+}
+
+#usernameWrap .button:hover{
+  background: #2ecc71;
+  transition: .5s;
+}
+
+/* chat features hidden before entering username */
+
+#chatWrapper{
+  display: none;
+}
+
+/* chat room */
+
+#chat{
+  display: block;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+#chat {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#chat li {
+  padding: 5px 10px;
+  word-wrap: break-word;
+}
+
+#chat li span{
+  font-size: 14px;
+  color: #cbcbcb;
+}
+
+#chat li.sent span{
+  float: right;
+}
+
+input:focus{
+  outline: none;
+}
+
+#send-message {
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #cbcbcb;
+}
+
+#send-message .message {
+  border: none;
+  padding: 10px;
+  width: 90%;
+  margin-right: .5%;
+  background: $textbox-color;
+  @include border-radius(5px);
+}
+
+#send-message .button{
+  border: none;
+  width: 9%;
+  padding: 10px;
+  float: right;
+  background: $btn-color;
+  color: #fff;
+  transition: .5s;
+  cursor: pointer;
+  font-family: 'Ubuntu',sans-serif;
+  @include border-radius(5px);
+}
+
+#send-message .button:hover{
+  background: $btn-hover-color;
+  transition: .5s;
+}
+
+.sent, .received{
+  max-width: 80%;
+  clear: both;
+  padding: 20px;
+  margin:10px;
+  background: $textbox-color;
+}
+
+.sent {
+  float:right;
+
+}
+
+.received {
+  float: left;
+}
+
+/* responsive form */
+
+@media screen and(max-width: 800px){
+  #send-message .message {
+    width: 79%;
+  }
+
+  #send-message .button{
+    width: 20%;
+  }
+}
+
+/* photo app */
+
+#slides_control > div{
+  height: 200px;
+}
+img{
+  margin:auto;
+  width: 400px;
+}
+#slides_control {
+  position:absolute;
+  width: 400px;
+  left:50%;
+  top:20px;
+  margin-left:-200px;
+}
