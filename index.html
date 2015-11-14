@@ -1,15 +1,29 @@
 <!doctype html>
 <html>
-<head>
-    <title>Socket.IO chat</title>
+<head >
+    <title>Docler Holdings</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- styles -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.min.css">
-    <!-- scripts -->
-    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 
+    <!-- scripts -->
+    <script src= "https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src= "http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
-<body>
-<div id="wrapper">
+<body >
+<!-- header -->
+<header>
+    <ul class="pills">
+        <li class="active"><a data-toggle="pill" href="#contentWrapper">Chatroom</a></li>
+        <li><a data-toggle="pill" href="#photos">Photos</a></li>
+        <li><a data-toggle="pill" href="#settings">Settings</a></li>
+    </ul>
+</header>
+<div class="tab-content">
+<!-- chat room -->
+
+<div id="contentWrapper" class="tab-pane fade in active">
     <div id="usernameWrap">
         <p id="usernameError"></p>
         <form id="setUsername">
@@ -26,7 +40,76 @@
         </form>
     </div>
 </div>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="js/mainApp.min.js"></script>
+
+<!-- photos -->
+
+<div id="photos" class="tab-pane fade">
+
+    <div id="slider" class="carousel slide" data-ride="carousel">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active"><img src=http://lorempixel.com/1200/600/city/1/></div>
+            <div class="item"><img src=http://lorempixel.com/1200/600/city/2/></div>
+            <div class="item"><img src=http://lorempixel.com/1200/600/city/3/></div>
+            <div class="item"><img src=http://lorempixel.com/1200/600/city/4/></div>
+            <div class="item"><img src=http://lorempixel.com/1200/600/city/5/></div>
+            <div class="item"><img src=http://lorempixel.com/1200/600/city/6/></div>
+            <div class="item"><img src=http://lorempixel.com/1200/600/city/7/></div>
+            <div class="item"><img src=http://lorempixel.com/1200/600/city/8/></div>
+            <div class="item"><img src=http://lorempixel.com/1200/600/city/9/></div>
+            <div class="item"><img src=http://lorempixel.com/1200/600/city/10/></div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#slider" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#slider" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+
+<!-- settings -->
+
+<div id="settings" class="tab-pane fade">
+    <h1>Settings</h1>
+    <div id="accordion">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Photo Settings</a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse">
+                <div class="panel-body">
+
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Chat Settings</a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <form id="updateUsername" class="text-center">
+                        <input type="text" class="message" id="newUsername" placeholder="Type in your new username" />
+                        <input type="submit" class="button" value="UPDATE" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- more scripts -->
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/mainApp.min.js"></script>
 </body>
 </html>
