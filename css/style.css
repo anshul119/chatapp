@@ -1,0 +1,231 @@
+/* imports */
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu);
+/* colors */
+/* mixins */
+/* basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+ul {
+  list-style-type: none; }
+
+body::-webkit-scrollbar {
+  display: none; }
+
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+  color: #fff; }
+
+/* header */
+header {
+  position: fixed;
+  background: #27ae60;
+  color: #fff;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  padding: 15px;
+  font-family: 'Ubuntu', sans-serif;
+  z-index: 999999; }
+  header ul {
+    display: table;
+    width: 100%; }
+    header ul li {
+      display: table-cell;
+      width: 33.33333333334%;
+      text-align: center;
+      font-size: 20px;
+      text-transform: uppercase;
+      white-space: nowrap; }
+
+@media screen and (max-width: 400px) {
+  header ul li {
+    font-size: 16px; } }
+/* photo and settings page */
+#photos, #settings {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 80px 30px 0 30px; }
+  #photos h1, #settings h1 {
+    text-align: center;
+    margin: 30px 0 50px 0; }
+
+/* getting username */
+#contentWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%; }
+
+#usernameWrap {
+  margin: 0 auto;
+  text-align: center;
+  max-width: 600px;
+  margin-top: 20%; }
+
+#usernameError {
+  margin: 20px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 24px;
+  color: #e74c3c; }
+
+/* username form */
+#updateUsername .message, #usernameWrap .message {
+  height: 50px;
+  padding: 5px 20px 5px 20px;
+  font-size: 24px;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin-bottom: 20px;
+  width: 100%;
+  border: none;
+  border-bottom: 3px solid #ecf0f1; }
+#updateUsername .message:focus, #usernameWrap .message:focus {
+  border-bottom: 3px solid #27ae60; }
+#updateUsername .button, #usernameWrap .button {
+  height: 50px;
+  padding: 5px 20px 5px 20px;
+  font-size: 24px;
+  font-family: 'Ubuntu', sans-serif;
+  border: none;
+  background: #27ae60;
+  color: #fff;
+  cursor: pointer;
+  transition: .5s; }
+#updateUsername .button:hover, #usernameWrap .button:hover {
+  background: #2ecc71;
+  transition: .5s; }
+
+/* chat features hidden before entering username */
+#chatWrapper {
+  display: none;
+  height: 100%;
+  width: 100%;
+  padding: 70px 0 70px 0; }
+
+/* chat room */
+#chat {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro', sans-serif; }
+  #chat li {
+    padding: 5px 10px;
+    word-wrap: break-word; }
+    #chat li span {
+      font-size: 14px;
+      color: #cbcbcb; }
+  #chat li.sent span {
+    float: right; }
+
+input:focus {
+  outline: none; }
+
+#send-message {
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #cbcbcb; }
+  #send-message .message {
+    border: none;
+    float: left;
+    padding: 10px;
+    width: 90%;
+    margin-right: .5%;
+    background: #ecf0f1;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px; }
+  #send-message .button {
+    border: none;
+    width: 9%;
+    padding: 10px;
+    float: right;
+    background: #27ae60;
+    color: #fff;
+    transition: .5s;
+    cursor: pointer;
+    font-family: 'Ubuntu',sans-serif;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px; }
+  #send-message .button:hover {
+    background: #2ecc71;
+    transition: .5s; }
+
+.sent, .received {
+  max-width: 80%;
+  clear: both;
+  padding: 20px;
+  margin: 10px;
+  background: #ecf0f1; }
+
+.sent {
+  float: right; }
+
+.received {
+  float: left; }
+
+/* responsive message input form */
+@media screen and (max-width: 800px) {
+  #send-message .message {
+    width: 79%; }
+
+  #send-message .button {
+    width: 20%; } }
+/* photo slider page */
+#img-slider {
+  max-width: 1200px;
+  margin: 0 auto; }
+  #img-slider img {
+    user-drag: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none; }
+
+/* settings page */
+#settings h1 {
+  font-family: 'Source Sans Pro', sans-serif;
+  text-transform: uppercase; }
+
+#accordion {
+  max-width: 900px;
+  margin: 0 auto; }
+  #accordion a {
+    color: #000; }
+
+#photoSetting label, #photoSetting #widVal, #photoSetting #higVal {
+  font-size: 24px;
+  font-family: 'Source Sans Pro', sans-serif; }
+#photoSetting label, #photoSetting #widVal {
+  display: inline-block; }
+#photoSetting label, #photoSetting #higVal {
+  display: inline-block; }
+#photoSetting #widVal, #photoSetting #higVal {
+  font-weight: 700;
+  color: #27ae60; }
+
+/* customizing accordions and sliders */
+.panel-default {
+  border: none; }
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+  background: #27ae60;
+  border: none;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%; }
+
+.ui-state-default:hover {
+  background: #2ecc71; }
+
+/*# sourceMappingURL=style.css.map */

@@ -194,6 +194,7 @@ input:focus{
 
   .message {
     border: none;
+    float: left;
     padding: 10px;
     width: 90%;
     margin-right: .5%;
@@ -248,21 +249,69 @@ input:focus{
   }
 }
 
-/* photo app */
+/* photo slider page */
 
-#slider{
-  max-width: 1000px;
-  height: auto;
+#img-slider{
+  max-width: 1200px;
   margin: 0 auto;
+
+  img{
+    user-drag: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+  }
 }
 
-/* settings */
+/* settings page */
+
+#settings{
+  h1{
+    font-family: 'Source Sans Pro', sans-serif;
+    text-transform: uppercase;
+  }
+}
 
 #accordion{
   max-width: 900px;
   margin: 0 auto;
 
   a{
-    color:#000000;
+    color:#000;
   }
+}
+
+#photoSetting{
+  label, #widVal, #higVal{
+    font-size: 24px;
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+
+  label, #widVal{
+    display: inline-block;
+  }
+
+  label, #higVal{
+    display: inline-block;
+  }
+
+  #widVal, #higVal{
+    font-weight: 700;
+    color: $btn-color;
+  }
+}
+
+/* customizing accordions and sliders */
+
+.panel-default{
+  border: none;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
+  background: $btn-color;
+  border: none;
+  @include border-radius(50%);
+}
+
+.ui-state-default:hover{
+  background: $btn-hover-color;
 }
