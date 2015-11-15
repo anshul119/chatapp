@@ -12,7 +12,7 @@
     <script src= "https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src= "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script src= "https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-    <script src= "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src= "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
 </head>
 <body >
 <!-- header -->
@@ -24,9 +24,10 @@
     </ul>
 </header>
 <div class="tab-content">
-<!-- chat room -->
 
+<!-- chat room -->
 <div id="contentWrapper" class="tab-pane fade in active">
+    <!-- enter username section -->
     <div id="usernameWrap">
         <p id="usernameError"></p>
         <form id="setUsername">
@@ -34,7 +35,7 @@
             <input class="button" type="submit" value="GET IN"/>
         </form>
     </div>
-
+    <!-- chat window -->
     <div id="chatWrapper">
         <div id="chat-msg">
             <ul id="chat"></ul>
@@ -46,10 +47,8 @@
     </div>
 </div>
 
-<!-- photos -->
-
+<!-- photos section -->
 <div id="photos" class="tab-pane fade">
-
     <div id="img-slider" class="carousel slide">
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
@@ -64,7 +63,6 @@
             <div class="item"><img src=http://lorempixel.com/1200/600/city/9/></div>
             <div class="item"><img src=http://lorempixel.com/1200/600/city/10/></div>
         </div>
-
         <!-- Left and right controls -->
         <a class="left carousel-control" href="#img-slider" role="button" data-slide="prev">
             <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -75,11 +73,11 @@
     </div>
 </div>
 
-<!-- settings -->
-
+<!-- settings section-->
 <div id="settings" class="tab-pane fade">
     <h1>Settings</h1>
     <div id="accordion">
+        <!-- photo settings -->
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
@@ -97,6 +95,7 @@
                 </div>
             </div>
         </div>
+        <!-- chat settings -->
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
@@ -117,7 +116,7 @@
 </div>
 </div>
 
-<!-- more scripts -->
+<!-- scripts -->
 <script src="/socket.io/socket.io.js"></script>
 <script src="js/mainApp.min.js"></script>
 </body>

@@ -81,23 +81,6 @@ header{
   }
 }
 
-/* photo and settings page */
-
-#photos, #settings{
-  position:absolute;
-  top: 0;
-  left:0;
-  width: 100%;
-  padding: 80px 30px 0 30px;
-
-  h1{
-    text-align: center;
-    margin: 30px 0 50px 0;
-    font-family: 'Source Sans Pro', sans-serif;
-    text-transform: uppercase;
-  }
-}
-
 /* getting username */
 
 #contentWrapper{
@@ -273,6 +256,23 @@ input:focus{
   }
 }
 
+/* photo and settings page */
+
+#photos, #settings{
+  position:absolute;
+  top: 0;
+  left:0;
+  width: 100%;
+  padding: 80px 30px 0 30px;
+
+  h1{
+    text-align: center;
+    margin: 30px 0 50px 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    text-transform: uppercase;
+  }
+}
+
 /* photo slider page */
 
 #img-slider{
@@ -297,6 +297,8 @@ input:focus{
   }
 }
 
+/* photo settings slider */
+
 #photoSetting{
   label, #widVal, #higVal{
     font-size: 24px;
@@ -316,6 +318,8 @@ input:focus{
     color: $btn-color;
   }
 }
+
+/* chat settings */
 
 #chatSetting{
   #updateStatus{
