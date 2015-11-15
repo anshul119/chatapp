@@ -25,6 +25,18 @@ io.sockets.on('connection',function(socket){
         }
     });
 
+    socket.on('update user',function(data,callback){
+        if(usernames.indexOf(data) != -1){
+            callback(false);
+        } else{
+            callback(true);
+            usernames.splice(usernames.indexOf(socket.username),1);
+            socket.username = data;
+            usernames.push(socket.username);
+            io.sockets.emit('usernames',usernames);
+        }
+    });
+
     socket.on('send message',function(data){
         io.sockets.emit('new message',{message:data,username:socket.username});
     });

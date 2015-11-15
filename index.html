@@ -36,7 +36,9 @@
     </div>
 
     <div id="chatWrapper">
-        <ul id="chat"></ul>
+        <div id="chat-msg">
+            <ul id="chat"></ul>
+        </div>
         <form id="send-message">
             <input class="message" type="text" id="message" placeholder="Type a message" autocomplete="off" />
             <input class="button" type="submit" value="SEND"/>
@@ -103,9 +105,10 @@
             </div>
             <div id="chatSetting" class="panel-collapse collapse">
                 <div class="panel-body">
+                    <p id="updateStatus"></p>
                     <form id="updateUsername" class="text-center">
                         <input type="text" class="message" id="newUsername" placeholder="Type in your new username" />
-                        <input type="button" class="button" value="UPDATE" />
+                        <input type="submit" class="button" value="UPDATE" />
                     </form>
                 </div>
             </div>

@@ -1,13 +1,14 @@
 /* imports */
 
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
-@import url(https://fonts.googleapis.com/css?family=Ubuntu);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
 /* colors */
 
-$btn-color: #27ae60;
-$btn-hover-color: #2ecc71;
+$btn-color: #22A7F0;
+$btn-hover-color: #4183D7;
 $textbox-color: #ecf0f1;
+$menu-item-bg: #2980b9;
 
 /* mixins */
 
@@ -50,7 +51,7 @@ header{
   width: 100%;
   height: 60px;
   padding: 15px;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   z-index: 999999;
 
   ul{
@@ -64,6 +65,12 @@ header{
       font-size: 20px;
       text-transform: uppercase;
       white-space: nowrap;
+
+      a:hover{
+        padding: 8px;
+        background: $menu-item-bg;
+        @include border-radius(5px);
+      }
     }
   }
 }
@@ -86,6 +93,8 @@ header{
   h1{
     text-align: center;
     margin: 30px 0 50px 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    text-transform: uppercase;
   }
 }
 
@@ -135,7 +144,7 @@ header{
     height: 50px;
     padding: 5px 20px 5px 20px;
     font-size: 24px;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     border: none;
     background: $btn-color;
     color:#fff;
@@ -144,8 +153,14 @@ header{
   }
 
   .button:hover{
-    background: #2ecc71;
+    background: $btn-hover-color;
     transition: .5s;
+  }
+}
+
+@media screen and(max-width: 600px){
+  #usernameWrap .message, #updateUsername .message {
+    font-size: 16px;
   }
 }
 
@@ -158,28 +173,39 @@ header{
   padding: 70px 0 70px 0;
 }
 
+#updateUsername{
+  display: none;
+}
+
 /* chat room */
 
-#chat{
-  display: block;
-  margin: 0;
-  padding: 0;
-  font-family: 'Source Sans Pro', sans-serif;
+#chat-msg{
+  overflow: auto;
+  padding-bottom: 70px !important;
 
-  li {
-    padding: 5px 10px;
-    word-wrap: break-word;
+  #chat{
+    display: block;
+    margin: 0;
+    padding: 0;
+    font-family: 'Source Sans Pro', sans-serif;
 
-    span {
-      font-size: 14px;
-      color: #cbcbcb;
+    li {
+      padding: 5px 10px;
+      word-wrap: break-word;
+
+      span {
+        font-size: 14px;
+        color: #cbcbcb;
+      }
+    }
+
+    li.sent span{
+      float: right;
     }
   }
-
-  li.sent span{
-    float: right;
-  }
 }
+
+
 
 input:focus{
   outline: none;
@@ -211,7 +237,7 @@ input:focus{
     color: #fff;
     transition: .5s;
     cursor: pointer;
-    font-family: 'Ubuntu',sans-serif;
+    font-family: 'Montserrat',sans-serif;
     @include border-radius(5px);
   }
 
@@ -252,7 +278,7 @@ input:focus{
 /* photo slider page */
 
 #img-slider{
-  max-width: 1200px;
+  max-width: 1120px;
   margin: 0 auto;
 
   img{
@@ -263,13 +289,6 @@ input:focus{
 }
 
 /* settings page */
-
-#settings{
-  h1{
-    font-family: 'Source Sans Pro', sans-serif;
-    text-transform: uppercase;
-  }
-}
 
 #accordion{
   max-width: 900px;
@@ -300,10 +319,28 @@ input:focus{
   }
 }
 
+#chatSetting{
+  #updateStatus{
+    margin: 20px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 24px;
+    color: #e74c3c;
+  }
+}
+
 /* customizing accordions and sliders */
 
 .panel-default{
   border: none;
+
+  .panel-heading{
+    border:none;
+
+    h4{
+      text-transform: uppercase;
+      font-family: 'montserrat', san-serif;
+    }
+  }
 }
 
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
